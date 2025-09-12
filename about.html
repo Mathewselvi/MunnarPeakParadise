@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Munnar Peak Paradise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafbfc;
+            font-weight: 300;
+        }
+
+        .nav {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            z-index: 15;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 25px;
+            font-weight: 300;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 25px;
+        }
+
+        .nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('Images/exterior2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .hero-content {
+            z-index: 10;
+            max-width: 800px;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            font-weight: 100;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            opacity: 0.95;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section h2 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1e3a8a;
+            font-weight: 200;
+            letter-spacing: 1px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .about-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #64748b;
+            font-weight: 300;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+        }
+
+        .about-image {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .features-section {
+            background: white;
+            padding: 120px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: #fafbfc;
+            padding: 50px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.1);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(30, 58, 138, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            color: #1e3a8a;
+        }
+
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #1e3a8a;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .location-section {
+            padding: 80px 0;
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .location-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #4a90a4;
+        }
+
+        .location-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .highlights-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlights-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .highlights-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4a90a4;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('Images/img3.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="rgba(255,255,255,0.02)" width="1200" height="600"/></svg>');
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 30px;
+        }
+
+        .stat-item {
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 100;
+            margin-bottom: 15px;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .stat-label {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .experience-section {
+            background: #ffffff;
+            padding: 80px 0;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .experience-card {
+            background: #f8f9fa;
+            padding: 35px;
+            border-radius: 15px;
+            border-left: 5px solid #4a90a4;
+            transition: box-shadow 0.3s;
+        }
+
+        .experience-card:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .experience-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .experience-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('Images/exterior1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><rect fill="rgba(255,255,255,0.02)" width="1200" height="300"/></svg>');
+        }
+
+        .cta-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            color: white;
+            font-weight: 200;
+            letter-spacing: 1px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .cta-section p {
+            font-size: 1.4rem;
+            margin-bottom: 50px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            opacity: 0.95;
+            z-index: 2;
+            position: relative;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 300;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+            margin: 0 15px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .btn:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: white;
+            padding: 100px 0 0;
+            margin-top: 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-main {
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-section {
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 200;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #60a5fa, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-tagline {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            color: #60a5fa;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .footer-links a::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transform: translateX(-5px);
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            color: #60a5fa;
+        }
+
+        .footer-links a:hover {
+            color: #60a5fa;
+            transform: translateX(5px);
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .contact-info {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .contact-info i {
+            width: 20px;
+            margin-right: 15px;
+            color: #60a5fa;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+        }
+
+        .social-link.facebook:hover {
+            background: #1877f2;
+        }
+
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .social-link.twitter:hover {
+            background: #1da1f2;
+        }
+
+        .social-link.youtube:hover {
+            background: #ff0000;
+        }
+
+        .newsletter-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+        }
+
+        .newsletter-section h4 {
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .newsletter-section p {
+            opacity: 0.8;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 400px;
+            margin: 0 auto;
+            gap: 15px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #60a5fa;
+        }
+
+        .newsletter-btn {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        .footer-bottom {
+            padding: 40px 0;
+            text-align: center;
+            opacity: 0.7;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .footer-decorative {
+            position: absolute;
+            top: 20%;
+            right: -100px;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(29, 78, 216, 0.1));
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 60px 0 0;
+                margin-top: 60px;
+            }
+
+            .footer-section {
+                margin-bottom: 40px;
+                text-align: center;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-input, .newsletter-btn {
+                width: 100%;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .footer-section h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .about-content,
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                left: 20px;
+                text-align: center;
+                z-index: 15;
+            }
+
+            .nav a {
+                display: inline-block;
+                margin: 5px;
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>About Our Paradise</h1>
+            <p>Discover the story behind Munnar's premier luxury resort</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Welcome to Munnar Peak Paradise</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Nestled in the heart of Kerala's stunning Western Ghats, Munnar Peak Paradise stands as a beacon of luxury and tranquility amidst one of India's most beautiful hill stations. Our resort offers an unparalleled experience where modern comfort meets the pristine beauty of nature.</p>
+                    
+                    <p>Since our establishment, we have been committed to providing guests with an exceptional stay that combines world-class hospitality with the serene charm of Munnar's tea gardens, rolling hills, and cool mountain air.</p>
+                    
+                    <p>Every aspect of our resort has been carefully designed to showcase the natural beauty of Munnar while providing our guests with the finest amenities and personalized service that makes each stay memorable.</p>
+                </div>
+                <div class="about-image" style="background-image: url('Images/img1.jpg');"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <h2>What Makes Us Special</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏔️</div>
+                    <h3>Prime Location</h3>
+                    <p>Strategically located to offer stunning views of tea gardens and mountain ranges, providing the perfect backdrop for your mountain getaway.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Eco-Friendly</h3>
+                    <p>We are committed to sustainable tourism practices that preserve the natural beauty of Munnar for future generations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <h3>Exceptional Dining</h3>
+                    <p>Savor authentic Kerala cuisine and international dishes prepared by our expert chefs using fresh, local ingredients.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalized Service</h3>
+                    <p>Our dedicated staff ensures every guest receives personalized attention and experiences true Kerala hospitality.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧘</div>
+                    <h3>Wellness Focus</h3>
+                    <p>Rejuvenate your mind and body with our spa services, yoga sessions, and meditation spaces amidst nature.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚗</div>
+                    <h3>Easy Access</h3>
+                    <p>Conveniently located with easy access to Munnar's major attractions, tea museums, and trekking trails.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="location-section">
+        <div class="container">
+            <h2>Our Location in Munnar</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>Perfect Mountain Setting</h3>
+                    <p>Munnar Peak Paradise is ideally situated in the heart of Munnar, offering breathtaking views and easy access to the region's most spectacular attractions. Our location provides the perfect balance of serenity and accessibility.</p>
+                    
+                    <p>Located at an altitude of 1600 meters above sea level, our resort enjoys a pleasant climate year-round, making it the perfect escape from the heat and humidity of the plains.</p>
+
+                    <h3>Nearby Attractions</h3>
+                    <ul class="highlights-list">
+                        <li>Eravikulam National Park - 15 km</li>
+                        <li>Tea Museum - 8 km</li>
+                        <li>Mattupetty Dam - 12 km</li>
+                        <li>Top Station - 25 km</li>
+                        <li>Anamudi Peak - 20 km</li>
+                        <li>Echo Point - 18 km</li>
+                        <li>Kundala Lake - 22 km</li>
+                        <li>Rose Garden - 10 km</li>
+                    </ul>
+                </div>
+                <div class="about-image" style="background-image: url('Images/view.jpg');"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience-section">
+        <div class="container">
+            <h2>The Munnar Peak Paradise Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h4>Morning Magic</h4>
+                    <p>Wake up to the sound of birds chirping and the sight of mist rolling over tea gardens. Enjoy fresh mountain air and spectacular sunrise views from your room.</p>
+                </div>
+                <div class="experience-card">
+                    <h4>Adventure Activities</h4>
+                    <p>Experience the thrill of trekking, rock climbing, paragliding, and nature walks. Our team can arrange guided tours and adventure activities for all skill levels.</p>
+                </div>
+                <div class="experience-card">
+                    <h4>Cultural Immersion</h4>
+                    <p>Learn about the rich tea culture of Munnar, visit local plantations, and experience traditional Kerala art forms and cuisine during your stay.</p>
+                </div>
+                <div class="experience-card">
+                    <h4>Relaxation & Wellness</h4>
+                    <p>Unwind with traditional Ayurvedic treatments, yoga sessions at sunrise, and meditation amidst the tranquil mountain environment.</p>
+                </div>
+                <div class="experience-card">
+                    <h4>Culinary Journey</h4>
+                    <p>Embark on a gastronomic adventure with authentic Kerala specialties, fresh mountain produce, and aromatic spices that define the region's cuisine.</p>
+                </div>
+                <div class="experience-card">
+                    <h4>Family Memories</h4>
+                    <p>Create lasting memories with family-friendly activities, nature exploration, and comfortable accommodations designed for guests of all ages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Experience Paradise Today</h2>
+            <p>Discover why Munnar Peak Paradise is the perfect destination for your mountain retreat. Book your stay with us and create memories that will last a lifetime.</p>
+            <a href="index.html#rooms" class="btn">Explore Rooms</a>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-decorative"></div>
+        <div class="footer-content">
+            <div class="container-fluid px-3 px-md-5">
+                <div class="footer-main">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="footer-section">
+                                <h2 class="footer-logo">Munnar Peak Paradise</h2>
+                                <p class="footer-tagline">Where luxury meets nature's grandeur. Experience the perfect blend of comfort and wilderness in the heart of Munnar's tea gardens.</p>
+                                <div class="social-links">
+                                    <a href="#" class="social-link facebook">
+                                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="social-link instagram">
+                                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="social-link twitter">
+                                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="social-link youtube">
+                                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <div class="footer-section">
+                                <h4>Quick Links</h4>
+                                <ul class="footer-links">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="index.html#rooms">Our Rooms</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="#gallery">Gallery</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-section">
+                                <h4>Services</h4>
+                                <ul class="footer-links">
+                                    <li><a href="#rooms">Luxury Accommodation</a></li>
+                                    <li><a href="#activities">Adventure Tours</a></li>
+                                    <li><a href="#spa">Spa & Wellness</a></li>
+                                    <li><a href="#dining">Fine Dining</a></li>
+                                    <li><a href="#events">Event Planning</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-section">
+                                <h4>Contact Info</h4>
+                                <div class="contact-info">
+                                    <i>📍</i>
+                                    <span>Tea Estate Road, Munnar<br>Kerala 685612, India</span>
+                                </div>
+                                <div class="contact-info">
+                                    <i>📞</i>
+                                    <span>+91 485 231 0000</span>
+                                </div>
+                                <div class="contact-info">
+                                    <i>✉️</i>
+                                    <span>info@munnarpeakparadise.com</span>
+                                </div>
+                                <div class="contact-info">
+                                    <i>🕐</i>
+                                    <span>24/7 Guest Services</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="newsletter-section">
+                                <h4>Stay Connected</h4>
+                                <p>Subscribe to our newsletter for exclusive offers and updates from paradise</p>
+                                <form class="newsletter-form">
+                                    <input type="email" class="newsletter-input" placeholder="Enter your email address">
+                                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>&copy; 2024 Munnar Peak Paradise. All rights reserved. | Crafted with ❤️ for unforgettable experiences</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading effect for images
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroSection = document.querySelector('.hero-section');
+            if (heroSection) {
+                heroSection.style.opacity = '0';
+                heroSection.style.transition = 'opacity 0.5s ease-in-out';
+                
+                // Simulate image load
+                setTimeout(() => {
+                    heroSection.style.opacity = '1';
+                }, 100);
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
