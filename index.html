@@ -20,7 +20,7 @@
     <meta property="og:description" content="Premier luxury resort in Munnar offering panoramic mountain views, premium suites, and exceptional hospitality amidst tea plantations.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://munnarpeakparadise.com">
-    <meta property="og:image" content="https://munnarpeakparadise.com/view.jpg">
+    <meta property="og:image" content="https://munnarpeakparadise.com/peakparadiselogo.JPG">
     <meta property="og:site_name" content="Munnar Peak Paradise">
     <meta property="og:locale" content="en_IN">
 
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Munnar Peak Paradise - Luxury Resort Kerala">
     <meta name="twitter:description" content="Experience luxury at Kerala's premier mountain resort with panoramic views and exceptional amenities.">
-    <meta name="twitter:image" content="https://munnarpeakparadise.com/view.jpg">
+    <meta name="twitter:image" content="https://munnarpeakparadise.com/peakparadiselogo.JPG">
 
     <!-- Business/Local SEO -->
     <meta name="business:contact_data:locality" content="Munnar">
@@ -36,6 +36,13 @@
     <meta name="business:contact_data:country_name" content="India">
     <meta name="business:contact_data:phone_number" content="+91 81291 10824">
     <meta name="business:contact_data:email" content="peakparadisemunnar@gmail.com">
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="peakparadiselogo.JPG">
+    <link rel="icon" type="image/jpeg" sizes="16x16" href="peakparadiselogo.JPG">
+    <link rel="apple-touch-icon" href="peakparadiselogo.JPG">
+    <link rel="shortcut icon" href="peakparadiselogo.JPG">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -88,8 +95,26 @@
         .nav {
             position: absolute;
             top: 30px;
+            left: 50px;
             right: 50px;
             z-index: 15;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            height: 160px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-links {
+            display: flex;
         }
 
         .nav a {
@@ -743,6 +768,18 @@
                 padding: 10px;
                 border-radius: 15px;
                 backdrop-filter: blur(10px);
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-logo {
+                height: 100px;
+                margin-bottom: 5px;
+            }
+
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
             }
 
             .nav a {
@@ -918,6 +955,10 @@
                 padding: 8px;
             }
 
+            .nav-logo {
+                height: 85px;
+            }
+
             .nav a {
                 font-size: 0.75rem;
                 padding: 5px 10px;
@@ -957,10 +998,13 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact</a>
+            <img src="peakparadiselogo-removebg-preview.png" alt="Munnar Peak Paradise Logo" class="nav-logo">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </nav>
         <div class="hero-content">
             <h1>Munnar Peak Paradise</h1>
